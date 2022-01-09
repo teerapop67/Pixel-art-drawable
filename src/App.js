@@ -28,12 +28,12 @@ function App() {
     ],
     [cells]
   );
-  const chatString = useMemo(
+  const chatString = useCallback(
     () =>
       cells
         .map((cell) => cell.color.slice(0))
         .join(fulfillState ? `T${saveFulfillColor},` : ','),
-    []
+    [cells]
   );
 
   const onChangeSwatchColor = (color) => {
