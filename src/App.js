@@ -30,13 +30,13 @@ function App() {
   );
   const chatString = useMemo(() => {
     return fixedString();
-  }, [cells]);
+  }, [cells, fixedString]);
 
   const fixedString = useCallback(() => {
     cells
       .map((cell) => cell.color.slice(0))
       .join(fulfillState ? `T${saveFulfillColor},` : ',');
-  }, [fulfillState, saveFulfillColor]);
+  }, [cells, fulfillState, saveFulfillColor]);
 
   const onChangeSwatchColor = (color) => {
     setSaveCurrentColor(color);
