@@ -33,7 +33,7 @@ function App() {
       cells
         .map((cell) => cell.color.slice(0))
         .join(fulfillState ? `T${saveFulfillColor},` : ','),
-    [cells]
+    []
   );
 
   const onChangeSwatchColor = (color) => {
