@@ -29,11 +29,14 @@ function App() {
     [cells]
   );
   const chatString = useMemo(() => {
+    return fixChatString(fulfillState, saveFulfillColor);
+  }, [cells, ,]);
+
+  const fixChatString = (fulfill, saveFullfil) => {
     return cells
       .map((cell) => cell.color.slice(0))
       .join(fulfillState ? `T${saveFulfillColor},` : ',');
-  }, [cells]);
-
+  };
 
   const onChangeSwatchColor = (color) => {
     setSaveCurrentColor(color);
