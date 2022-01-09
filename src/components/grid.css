@@ -1,0 +1,16 @@
+
+
+.cells-class {
+  cursor: pointer;
+  border: 0.1px solid #F3F1F1;
+  background: white;
+  transition: all 150ms linear;
+}
+
+.cells-class:hover {
+  transform: scale(1);
+}
+
+.export-pixel {
+  border: 0px ;
+}
