@@ -237,7 +237,6 @@ const Grid = ({
   // function for deleting color that was deleted by right click or erase
   const setNewUndoArray = (cell, cellIndex) => {
     let undoDel = [...undoColor];
-    let i = 0;
     undoDel.forEach((undo, index) => {
       if (undo.length > 0) {
         undo.forEach((un, i) => {

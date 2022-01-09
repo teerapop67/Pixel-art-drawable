@@ -50,7 +50,6 @@ const ToolPixel = ({
     setRedoColor([]);
     setSaveFulfillColor('');
     setSaveCurrentColor('#56BC58');
-    var file = (document.querySelector('input[type=file]').value = null);
   };
 
   const Drawable = () => {
@@ -198,7 +197,6 @@ const ToolPixel = ({
     //this condition is, when user click fulfill color that is undo it will be the same color like fulfill
     // and usual undo click
     let foundUndo = false;
-    let indexFulfillUndo;
     setCells(
       cells.map((cell, cellIndex) => {
         //undo usual click
