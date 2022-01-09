@@ -37,7 +37,7 @@ function App() {
 
     fixFull();
     
-  }, [cells, fixFull]);
+  }, [cells]);
 
 
   const onChangeSwatchColor = (color) => {
