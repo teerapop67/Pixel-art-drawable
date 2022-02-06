@@ -58,7 +58,7 @@ function App() {
           fontWeight: 'bold',
         }}
       >
-        <h1>Welcome to My World</h1>
+        <h1>Only Support on Desktop</h1>
       </div>
 
       <div className="apps">
