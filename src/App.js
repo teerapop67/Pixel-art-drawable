@@ -5,6 +5,7 @@ import Grid from './components/Grid';
 import ColorPicker from './components/ColorPicker';
 import useStyles from './App.styles';
 import ToolPixel from './components/ToolPixel';
+import './index.css';
 
 const offCell = {
   on: false,
@@ -42,71 +43,90 @@ function App() {
   };
 
   return (
-    <div className={classes.app}>
-      <ColorPicker
-        currentColor={currentColor}
-        onSetColor={setCurrentColor}
-        onSetSaveCurrentColor={setSaveCurrentColor}
-      />
-      <div className={classes.colorDirection}>
-        <div className={classes.colorSwatchContainer}>
-          {colorSwatch.map((color) => (
-            <div
-              key={color}
-              onClick={() => onChangeSwatchColor(color)}
-              className={classes.colorSwatch}
-              style={{ background: color }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <Grid
-        cells={cells}
-        setCells={setCells}
-        currentColor={currentColor}
-        onFulfill={fulfillState}
-        fulfillColor={saveFulfillColor}
-        onSetUndoColor={setUndoColor}
-        undoColor={undoColor}
-        onSetRedoColor={setRedoColor}
-        redoColor={redoColor}
-        refPixel={refPixel}
-      />
-      {/* <p className={classes.chatString} style={{ color: '#fff'}}>
-        !rgb
-        {chatString}
-      </p> */}
+    <>
       <div
         style={{
+          color: '#fff',
+          background: '#222',
+          boxShadow: '0 0 30px 10px rgba(255,255,255,0.1)',
+          width: '100%',
+          height: '80px',
+          alignItems: 'center',
           display: 'flex',
-          flexDirection: 'column',
-          width: '300px',
-          justifyContent: 'space-between',
-          margin: '10px 10px',
-          cursor: 'pointer',
+          justifyContent: 'center',
+          position: 'fixed',
+          fontWeight: 'bold',
         }}
       >
-        <ToolPixel
+        <h1>Welcome to My World</h1>
+      </div>
+
+      <div className={classes.app}>
+        <ColorPicker
+          currentColor={currentColor}
+          onSetColor={setCurrentColor}
+          onSetSaveCurrentColor={setSaveCurrentColor}
+        />
+        <div className={classes.colorDirection}>
+          <div className={classes.colorSwatchContainer}>
+            {colorSwatch.map((color) => (
+              <div
+                key={color}
+                onClick={() => onChangeSwatchColor(color)}
+                className={classes.colorSwatch}
+                style={{ background: color }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <Grid
           cells={cells}
           setCells={setCells}
           currentColor={currentColor}
-          saveCurrentColor={saveCurrentColor}
-          setSaveCurrentColor={setSaveCurrentColor}
-          fulfillState={fulfillState}
-          saveFulfillColor={saveFulfillColor}
-          setSaveFulfillColor={setSaveFulfillColor}
-          setFulfillState={setFulfillState}
+          onFulfill={fulfillState}
+          fulfillColor={saveFulfillColor}
+          onSetUndoColor={setUndoColor}
           undoColor={undoColor}
-          setUndoColor={setUndoColor}
+          onSetRedoColor={setRedoColor}
           redoColor={redoColor}
-          setRedoColor={setRedoColor}
-          chatString={chatString}
-          setCurrentColor={setCurrentColor}
           refPixel={refPixel}
         />
+        {/* <p className={classes.chatString} style={{ color: '#fff'}}>
+        !rgb
+        {chatString}
+      </p> */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '300px',
+            justifyContent: 'space-between',
+            margin: '10px 10px',
+            cursor: 'pointer',
+          }}
+        >
+          <ToolPixel
+            cells={cells}
+            setCells={setCells}
+            currentColor={currentColor}
+            saveCurrentColor={saveCurrentColor}
+            setSaveCurrentColor={setSaveCurrentColor}
+            fulfillState={fulfillState}
+            saveFulfillColor={saveFulfillColor}
+            setSaveFulfillColor={setSaveFulfillColor}
+            setFulfillState={setFulfillState}
+            undoColor={undoColor}
+            setUndoColor={setUndoColor}
+            redoColor={redoColor}
+            setRedoColor={setRedoColor}
+            chatString={chatString}
+            setCurrentColor={setCurrentColor}
+            refPixel={refPixel}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

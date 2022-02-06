@@ -7,8 +7,10 @@ export default createUseStyles({
     height: '100vh',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: '4rem',
+    paddingLeft: '6rem',
     fontFamily: 'sans-serif',
-    backgroundColor: '#666',
+    backgroundColor: '#333',
   },
   colorSwatchContainer: {
     display: 'grid',
