@@ -61,7 +61,7 @@ function App() {
         <h1>Welcome to My World</h1>
       </div>
 
-      <div className={classes.app}>
+      <div className="apps">
         <ColorPicker
           currentColor={currentColor}
           onSetColor={setCurrentColor}
@@ -96,16 +96,7 @@ function App() {
         !rgb
         {chatString}
       </p> */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '300px',
-            justifyContent: 'space-between',
-            margin: '10px 10px',
-            cursor: 'pointer',
-          }}
-        >
+        <div className="tools">
           <ToolPixel
             cells={cells}
             setCells={setCells}
